@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, SectionHeadline } from "$components";
+  import { Button, ExperienceTable, SectionHeadline } from "$components";
   import image from "$assets/davide_b&w.jpg";
   import { goto } from "$app/navigation";
 
@@ -9,32 +9,28 @@
 </script>
 
 <section class="about-me mt-l">
-  <SectionHeadline sectionName="about-me">About Me</SectionHeadline>
+  <SectionHeadline sectionName="about-me">Su di Me</SectionHeadline>
   <div class="mt-m content-container default-margin">
     <img class="image" src={image} alt="me" />
     <div class="text">
       <p>
-        Hey, I'm Niklas, the driving force behind my freelancing agency
-        specializing in web development and data science.
+        Ciao, io sono Davide, uno sviluppatore freelance specializzato in
+        sviluppo web.
       </p>
       <p>
-        With years of hands-on experience tackling real-world coding challenges
-        and meeting diverse client needs, I've built a deep understanding of the
-        tech landscape. But beyond coding, my true passion lies in teaching.
-        I've had the privilege of guiding hundreds of aspiring developers,
-        focusing on making coding both practical and accessible. My goal is to
-        translate complex concepts into actionable skills that you can apply
-        right away.
+        Studiando da autodidatta, e spronato da una forte passione per la
+        programmazione web, ho acquisito una profonda conoscenza del panorama
+        tecnologico. Oltre al coding, mi piace condividere le mie conoscenze con
+        gli altri. Quando mi è possibile cerco di aiutare gli sviluppatori che
+        sono all'inizio del loro percorso formativo. Un mio obiettivo futuro è
+        quello di creare dei video corsi e tradurre concetti complessi in
+        competenze attuabili che si possono applicare subito.
       </p>
-      <p>
-        Through my courses, I’m committed to sharing the insights and lessons
-        I’ve learned in the field, so you can skip the pitfalls and fast-track
-        your development journey. If you're eager to learn from real-world
-        experience and practical know-how, let's dive in together.
-      </p>
-      <Button className="mt-m" {onclick}>Tell me about your project</Button>
+
+      <Button className="mt-m" {onclick}>Parlami del tuo progetto</Button>
     </div>
   </div>
+  <ExperienceTable />
 </section>
 
 <style>
