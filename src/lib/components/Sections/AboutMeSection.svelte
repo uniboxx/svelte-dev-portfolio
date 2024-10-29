@@ -14,8 +14,8 @@
     <img class="image" src={image} alt="me" />
     <div class="text">
       <p>
-        Ciao, io sono Davide, uno sviluppatore freelance specializzato in
-        sviluppo web.
+        Ciao, sono Davide, uno sviluppatore freelance specializzato in sviluppo
+        web.
       </p>
       <p>
         Studiando da autodidatta, e spronato da una forte passione per la
