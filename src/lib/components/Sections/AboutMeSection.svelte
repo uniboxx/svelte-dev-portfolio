@@ -2,6 +2,13 @@
   import { Button, ExperienceTable, SectionHeadline } from "$components";
   import image from "$assets/davide_b&w.jpg";
   import { goto } from "$app/navigation";
+  import type { DevExperience } from "$lib/types/sanity";
+
+  interface Props {
+    workExperience: DevExperience;
+  }
+
+  let { workExperience }: Props = $props();
 
   function onclick() {
     goto("/#contact-form");
@@ -30,7 +37,7 @@
       <Button className="mt-m" {onclick}>Parlami del tuo progetto</Button>
     </div>
   </div>
-  <ExperienceTable />
+  <ExperienceTable {workExperience} />
 </section>
 
 <style>

@@ -1,56 +1,24 @@
 <script lang="ts">
-  interface WorkExperience {
-    jobTitle: string;
-    company: string;
-    startDate: string;
-    endDate?: string;
+  import type { DevExperience } from "$lib/types/sanity";
+
+  interface Props {
+    workExperience: DevExperience;
   }
-  const workExperience: WorkExperience[] = [
-    {
-      jobTitle: "Formazione Sviluppo Web",
-      company: "none",
-      startDate: "2020",
-    },
-    {
-      jobTitle: "Procacciatore d'affari per contratti di telecomunicazione",
-      company: "Tim",
-      startDate: "2014-09",
-      endDate: "2019-11",
-    },
-    {
-      jobTitle:
-        "Procacciatore d'affari per la vendita di impianti di energia rinnovabile",
-      company: "Enel Green Power",
-      startDate: "2011-09",
-      endDate: "2014-07",
-    },
-    {
-      jobTitle: "Consulente Finanziario",
-      company: "Banca Fideuram",
-      startDate: "2008-02",
-      endDate: "2011-08",
-    },
-    {
-      jobTitle: "Atleta Professionista",
-      company: "Varie società sportive in Italia",
-      startDate: "1987-06",
-      endDate: "2012-02",
-    },
-  ];
+  let { workExperience }: Props = $props();
 </script>
 
 <section class="default-margin work-experience mt-m">
   <ul class="work-experience-list">
-    {#each workExperience as job, index}
+    {#each workExperience as job}
       <li class="work-item">
         <article>
           <h3 class="semi-bold mb-xs">{job.jobTitle}</h3>
           <div class="company-and-date">
             <p>{job.company}</p>
-            <p>
-              {job.startDate}
+            <p class="dark-grey">
+              {job.startDate.slice(0, 7)}
               {#if job.endDate}
-                / {job.endDate}
+                / {job.endDate.slice(0, 7)}
               {:else}
                 / present
               {/if}
