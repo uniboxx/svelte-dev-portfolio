@@ -1,5 +1,4 @@
-import type { DevExperience } from "$lib/types/sanity";
-import sanityClient from "$lib/utils/sanity";
+import sanityClient, { processProjectEntries } from "$lib/utils/sanity";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async () => {
@@ -7,5 +6,20 @@ export const load: PageLoad = async () => {
     '*[_type == "devExperience"] | order(startDate desc)',
   );
 
-  return { workExperience };
+  const rawProjects: Project[] = await sanityClient.fetch(
+    "*[_type == 'project'] | order(dateAccomplished desc)",
+  );
+
+  // console.log("BEFORE TRANSFORMATION");
+  // console.log(rawProjects[0]);
+  // console.log(rawProjects[0].image);
+
+  const projects = rawProjects.map(processProjectEntries);
+
+  // console.log("AFTER THE TRANFORMATION");
+  // console.log(projects[0]);
+
+  // console.log(projects[0].projectImageUrl);
+
+  return { workExperience, projects };
 };
